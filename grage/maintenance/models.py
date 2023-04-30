@@ -5,6 +5,7 @@ from grage.vehicle.models import Component, Vehicle
 
 class Maintenance(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE, related_name='maintenances')
+    # TODO: consider using JSONField for storing current conditions
     odometer = models.PositiveIntegerField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
